@@ -1,0 +1,15 @@
+﻿Name of folder with initial maps (and plus specific file names in that folder if you don't want the entire folder run):,InitialPlans,MO_Congress_HybridCountyTract_6+30SplitCounties.csv
+Name of folder with state data:,MO_HybridCountyTractInput_Congress_6+30SplitCounties,
+Name of folder for output:,InitialPlans,
+"Number/converge, choice for iterations/cycles (#/converge, it/cycle) ",50,it
+"Objective (choose from: none, pop, perim, eg, eg_shift, mm, pa, cmpttv)",pop,
+"Constraints (choose any from: pop, perim, eg, eg_shift, mm, pa, cmpttv, demo, whole)",demo,
+"Population deviation threshold (e.g., 0.03 for 3% deviation from ideal population):",0.005,
+Perimeter value added to current perimeter for perimeter threshold:,2000,
+Efficiency gap threshold:,0.025,
+Shifted efficiency gap threshold:,0.15,
+Median-Mean threshold:,0.02,
+Partisan Asymmetry threshold:,0.01,
+Edge weight for units in different counties (bonus):,1,
+Edge weight for units in the same county (penalty):,1,
+"Run until objective converges? (yes/no, threshold if applicable)",no,10
