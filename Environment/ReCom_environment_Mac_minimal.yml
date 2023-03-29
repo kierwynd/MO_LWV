@@ -1,0 +1,8 @@
+name: MCMCReCom
+channels:
+  - defaults
+dependencies:
+  - gerrychain
+  - notebook
+  - matplotlib
+prefix: /Users/kierwynd/opt/anaconda3/envs/MCMCReCom
