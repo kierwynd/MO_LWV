@@ -1,0 +1,7 @@
+name: MCMCReCom
+channels:
+  - defaults
+dependencies:
+  - gerrychain
+  - notebook
+prefix: C:\Users\kdobbs2\Anaconda3\envs\MCMCReCom
