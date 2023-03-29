@@ -1,17 +1,15 @@
 # MO_LWV
-This repository has the code, data, and results for Missouri redistricting for the League of Women Voters.
+This repository has the code and data for Missouri redistricting for the League of Women Voters.
 
 ## Data
-The **InitialPlans** folder contains the initial district plan assignment files for the experiments. There are census tract approximations of the congressional and state senate plans, and a census block group approximation of the state house plan. There are also hybrid county-tract or hybrid block-block group approximations of these plans.
-
-The **MO_TractInput**, **MO_BlockGroupInput**, and **MO_BlockInput** folders contain input files for census unit adjacency, population, Democrat/Republican votes, and population broken down by race/ethnicity. The **MO_HybridCountyTractInput_Congress_6+30SplitCounties**, **MO_HybridCountyTractInput_Senate_7+1SplitCounties**, and **MO_HybridBlockGroupBlockInput_House_20SplitBlockGroups** folders contain the corresponding input files for hybrid combinations of counties and tracts, or block groups and blocks.
+The **MO_Input_Senate** folder contains the initial district plan assignment files and hybrid county-tract shapefiles (with unit population, Democrat/Republican votes, and population broken down by race/ethnicity) for the Missouri state senate. The **MO_Input_House** and **MO_Input_Congress** folders contain analogous input data for the Missouri state house and Missouri congressional plans.
 
 ## Code
 
-The **ReCom_LocalSearch_MO.ipynb/ReCom_LocalSearch_MO.py** code uses _Recombination (ReCom)_ iterations within local search to improve an objective for a given district plan and constraints. This code reads in parameters from **ReCom_PARAMETERS_MO.csv**. The user does not need to alter the code itself, they only need to change the parameters in this file.
+The **ReComLocalSearch_MO_2022.ipynb/ReComLocalSearch_MO_2022.py** code uses the open-source GerryChain package to implement _Recombination (ReCom)_ iterations within local search to improve an objective for a given district plan, subject to constraints. This code reads in parameters from **ReCom_PARAMETERS_MO_2022.csv.** There are also .yml environment files in the folder **Environment** that detail the versions of all packages that the code uses.
 
-The **MetricEvaluation.ipynb/MetricEvaluation.py** code evaluates a given district plan with respect to population balance, compactness, Efficiency Gap, Partisan Asymmetry, competitiveness, etc. This code creates images of the parties' vote-seat curves and district vote-shares and a .txt file with all metric values. The user needs to enter a folder path for the district plan(s) to evaluation (line 190), specific maps in that folder if applicable (line 196), and the folder path for the census unit data (line 200).
+The **MetricEvaluation_MO_2022.ipynb/MetricEvaluation_MO_2022.py** code evaluates a given district plan (or plans) with respect to population balance, compactness, Efficiency Gap, Partisan Asymmetry, competitiveness, whole counties, etc. This code creates images of the parties' district vote-shares and a .csv file with all metric values.
 
-## Results
+## Parameter File
 
-The **FinalPlans** folder contains the final assignment files for Missouri's congressional, state senate, and state house district plans. The plans are labeled with COMP, EG, PA, or CMPTTV, to indicate that they were optimized with respect to compactness, Efficiency Gap, Partisan Asymmetry, or competitiveness.
+The local search code reads in parameters from **ReCom_PARAMETERS_MO_2022.csv.** The user does not need to alter the code itself, they only need to change the parameters in this file. The file is currently set up to optimize Missouri's state senate plan for compactness (measured by total perimeter), subject to population balance and whole-districts-within-counties constraints. With the given parameters, running the code will produce the assignment file of one state senate district plan optimized for compactness (located in a folder named Test) and should take approximately 30 seconds on a consumer-grade desktop/laptop computer.
