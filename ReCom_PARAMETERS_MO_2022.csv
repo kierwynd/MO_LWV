@@ -1,0 +1,21 @@
+﻿Name of folder with initial maps (plus specific file names in that folder if you don't want the entire folder run):,MO_Input_Senate/MO_Senate_InitialPlans,2022_Senate_Plan_CountyTractApprox_0.03per.csv
+Name of folder with state data:,MO_Input_Senate/MO_Senate_HybridCountyTract_7+1SplitCounties_projected32615_Data,
+Name of folder for output (plus optional string for beginning of each output file):,Test,S_CT
+Number of iterations total OR number of iterations to assess convergence (if choose 'yes' in B15),200,
+"Objective (choose from: none, pop, perim, cut_edges, eg, eg_shift, mm, pa, cmpttv)",perim,
+"Constraints (choose any from: pop, perim, cut_edges, eg, eg_shift, mm, pa, cmpttv, demo_basic, demo, whole)",pop,whole
+"Population deviation threshold (e.g., 0.03 for +-3% allowed deviation from ideal population):",0.03,
+Perimeter value added to initial perimeter for perimeter threshold (km):,2000,
+Cut-edges multiplier to set cut-edges threshold,1.5,
+Efficiency gap threshold:,0.025,
+Shifted efficiency gap threshold:,0.15,
+Median-Mean threshold:,0.02,
+Partisan Asymmetry threshold:,0.01,
+Competitiveness margin:,0.1,
+Edge weight for units in different counties (bonus):,1,
+Edge weight for units in the same county (penalty):,3,
+"Run until objective converges? (yes/no, plus threshold if yes)",yes,5
+Number of replications for each initial plan in map folder,1,
+Number of random walk steps before optimization iterations,100,
+"County adjacency to remove (GEOID, GEOID, linebreak, GEOID, GEOID, linebreak)",29095,29047
+,29189,29183
